@@ -24,8 +24,16 @@ const Header = () => {
     };
 
     const socialLinks = [
-        { href: "https://github.com", icon: <Github size={20} />, label: "GitHub" },
-        { href: "https://linkedin.com", icon: <Linkedin size={20} />, label: "LinkedIn" }
+        {
+            href: "https://github.com",
+            icon: <Github size={20} />,
+            label: "GitHub",
+        },
+        {
+            href: "https://linkedin.com",
+            icon: <Linkedin size={20} />,
+            label: "LinkedIn",
+        },
     ];
 
     return (
@@ -66,7 +74,7 @@ const Header = () => {
                                     icon={social.icon}
                                 />
                                 {/* Tooltip */}
-                                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 hidden group-hover:block">
+                                <div className="absolute -bottom-9 left-1/2 transform -translate-x-1/2 hidden group-hover:block">
                                     <div className="bg-gray-800 text-white text-sm px-2 py-1 rounded whitespace-nowrap">
                                         {social.label}
                                     </div>
@@ -94,8 +102,8 @@ const Header = () => {
                 {isMenuOpen && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
-                        animate={{ 
-                            opacity: 1, 
+                        animate={{
+                            opacity: 1,
                             height: "auto",
                             transition: {
                                 height: {
@@ -103,10 +111,10 @@ const Header = () => {
                                 },
                                 opacity: {
                                     duration: 0.2,
-                                }
-                            }
+                                },
+                            },
                         }}
-                        exit={{ 
+                        exit={{
                             opacity: 0,
                             height: 0,
                             transition: {
@@ -115,24 +123,30 @@ const Header = () => {
                                 },
                                 opacity: {
                                     duration: 0.2,
-                                }
-                            }
+                                },
+                            },
                         }}
                         className="md:hidden bg-gray-800 overflow-hidden"
                     >
                         <div className="px-2 pt-2 pb-3">
                             <div className="space-y-1">
-                                {["Home", "About", "Projects", "Skills", "Contact"].map(
-                                    (item) => (
-                                        <button
-                                            key={item}
-                                            onClick={() => handleNavigation(item.toLowerCase())}
-                                            className="block w-full px-3 py-2 text-gray-300 hover:text-white text-left"
-                                        >
-                                            {item}
-                                        </button>
-                                    )
-                                )}
+                                {[
+                                    "Home",
+                                    "About",
+                                    "Projects",
+                                    "Skills",
+                                    "Contact",
+                                ].map((item) => (
+                                    <button
+                                        key={item}
+                                        onClick={() =>
+                                            handleNavigation(item.toLowerCase())
+                                        }
+                                        className="block w-full px-3 py-2 text-gray-300 hover:text-white text-left"
+                                    >
+                                        {item}
+                                    </button>
+                                ))}
                             </div>
                             {/* Social links section for mobile */}
                             <div className="border-t border-gray-700 mt-3 pt-3 ">
