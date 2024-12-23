@@ -14,7 +14,7 @@ This repository contains the source code for my personal portfolio website. The 
 
 ## Technology Stack
 
-- **Frontend Framework**: React (with Next.js for server-side rendering and routing)
+- **Frontend Framework**: React 
 - **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
 
